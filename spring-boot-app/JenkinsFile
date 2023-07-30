@@ -8,7 +8,7 @@ pipeline {
   stages {
         stage('Checkout') {
          steps {
-            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/karthi770/cicd_eks.git']])
+            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/karthi770/cicd_eks_00.git']])
   //       sh 'echo passed'
   //       //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
       }
