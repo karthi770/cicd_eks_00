@@ -5,13 +5,14 @@ pipeline {
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
-  //stages {
-  //   stage('Checkout') {
-  //     steps {
+  stages {
+        stage('Checkout') {
+         steps {
+            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/karthi770/cicd_eks.git']])
   //       sh 'echo passed'
   //       //git branch: 'main', url: 'https://github.com/iam-veeramalla/Jenkins-Zero-To-Hero.git'
-  //     }
-  //   }
+      }
+        }
   //   stage('Build and Test') {
   //     steps {
   //       sh 'ls -ltr'
@@ -65,5 +66,5 @@ pipeline {
   //       }
   //   }
   // }
-//}
+}
 }
