@@ -38,6 +38,7 @@ pipeline {
         steps{
           script {
             docker.build registry
+            dir('/var/lib/jenkins/workspace/CICD_EKS/spring-boot-app/')
           }
         }
       }
