@@ -5,9 +5,9 @@ pipeline {
     maven "Apache Maven 3.6.3"
   }
 
-//   environment {
-// 	registry = "634211996823.dkr.ecr.us-east-1.amazonaws.com/spring-boot"
-// }
+  environment {
+	registry = "634211996823.dkr.ecr.us-east-1.amazonaws.com/spring-boot"
+}
 
   stages {
         stage('Checkout') {
@@ -34,13 +34,13 @@ pipeline {
          }
       }
 
-      // stage("Build image"){
-      //   steps{
-      //     script {
-      //       docker.build registry
-      //     }
-      //   }
-      // }
+      stage("Build image"){
+        steps{
+          script {
+            docker.build registry
+          }
+        }
+      }
 
   //   }
   //   stage('Build and Push Docker Image') {
