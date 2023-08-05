@@ -54,7 +54,7 @@ pipeline {
           withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8S', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
             sh"cd spring-boot-app-manifests"
             sh"ls -la"
-            sh "kubectl apply -f deployment.yml"
+            sh "kubectl apply -f spring-boot-app-manifests/deployment.yml"
 }
 
         }
