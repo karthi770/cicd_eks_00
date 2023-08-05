@@ -18,7 +18,7 @@ pipeline {
         
         stage('Static Code Analysis') {
        environment {
-         SONAR_URL = "http://3.89.111.112:9000"
+         SONAR_URL = "http://52.207.176.16:9000"
       }
        steps {
          withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
@@ -47,7 +47,6 @@ pipeline {
           sh"aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 634211996823.dkr.ecr.us-east-1.amazonaws.com"
           sh"docker push 634211996823.dkr.ecr.us-east-1.amazonaws.com/spring-boot:latest"
         }
-
       }
 
   //   }
