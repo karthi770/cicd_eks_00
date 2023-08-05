@@ -52,6 +52,8 @@ pipeline {
       stage("K8S Deployment"){
         steps{
           withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'K8S', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+            sh"ls -la"
+            sh"ls -la spring-boot-app-manifests/deployment.yml"
             sh "kubectl apply -f deployment.yml"
 }
 
